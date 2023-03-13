@@ -10,25 +10,27 @@ public class Main {
 	// write your code here
 
         FileWriter files = new FileWriter("Alphabets and numbers.txt");
-        for (char a = 'A'; a < 'Z'; a++) {
+        char dd = 'a';
+        for (char a = 'A'; a <= 'Z'; a++) {
             files.append(a);
-        }
-        for (char b = 'a'; b < 'z'; b++) {
-            files.append(b);
+            files.append(dd);
+            files.append("\n");
+            dd++;
         }
         for (char c = '0'; c <= '9'; c++) {
             files.append(c);
+            files.append("\n");
         }
         files.close();
 
         FileReader reader = new FileReader("Alphabets and numbers.txt");
         Scanner scanner = new Scanner(reader);
 
+        int i = 0;
         while(scanner.hasNextLine()) {
-            System.out.println(scanner.nextLine());
+            i++;
+            System.out.println(i+ ":"+scanner.nextLine());
         }
-
-
     }
 }
 //  try {
